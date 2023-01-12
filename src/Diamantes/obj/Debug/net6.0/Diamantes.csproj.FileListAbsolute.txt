@@ -1,0 +1,15 @@
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/Diamantes
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/Diamantes.deps.json
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/Diamantes.runtimeconfig.json
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/Diamantes.dll
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/Diamantes.pdb
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.csproj.AssemblyReference.cache
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.GeneratedMSBuildEditorConfig.editorconfig
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.AssemblyInfoInputs.cache
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.AssemblyInfo.cs
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.csproj.CoreCompileInputs.cache
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.dll
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/refint/Diamantes.dll
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.pdb
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.genruntimeconfig.cache
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/ref/Diamantes.dll

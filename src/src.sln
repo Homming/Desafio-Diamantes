@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamantes", "Diamantes\Diamantes.csproj", "{53145F8A-D6A3-428D-8423-A6C5A1269A5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diamantes.Test", "Diamantes.Test\Diamantes.Test.csproj", "{B1A80E5E-E16F-464C-BC50-26DE4D10154B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53145F8A-D6A3-428D-8423-A6C5A1269A5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53145F8A-D6A3-428D-8423-A6C5A1269A5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53145F8A-D6A3-428D-8423-A6C5A1269A5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53145F8A-D6A3-428D-8423-A6C5A1269A5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1A80E5E-E16F-464C-BC50-26DE4D10154B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1A80E5E-E16F-464C-BC50-26DE4D10154B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1A80E5E-E16F-464C-BC50-26DE4D10154B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1A80E5E-E16F-464C-BC50-26DE4D10154B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
