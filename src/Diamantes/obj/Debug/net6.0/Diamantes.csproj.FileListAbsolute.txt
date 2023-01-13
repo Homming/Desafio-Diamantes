@@ -13,3 +13,6 @@
 /home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.pdb
 /home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.genruntimeconfig.cache
 /home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/ref/Diamantes.dll
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/DotNetEnv.dll
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/bin/Debug/net6.0/Sprache.dll
+/home/nicholas/Área de Trabalho/Desafio-Diamantes/src/Diamantes/obj/Debug/net6.0/Diamantes.csproj.CopyComplete

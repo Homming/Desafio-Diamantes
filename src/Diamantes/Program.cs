@@ -2,7 +2,9 @@
 
 public class Program {
     public static void Main(string[] args) {
-        System.Console.WriteLine("teste");
+        var instace = new Diamantes();
+
+        instace.Menu();
     }
 }
 
