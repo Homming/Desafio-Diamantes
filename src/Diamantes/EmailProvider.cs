@@ -10,7 +10,7 @@ public class EmailProvider
     private MailMessage _mail { get; set; }
 
     public EmailProvider() {
-        DotNetEnv.Env.Load();
+        Env.Load();
         _emailRemetente = Environment.GetEnvironmentVariable("email");
         _senhaRemete = Environment.GetEnvironmentVariable("senha");
         
