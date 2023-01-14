@@ -9,10 +9,19 @@ public class EmailProvider
     private string? _senhaRemete { get; set; }
     private MailMessage _mail { get; set; }
 
-    public EmailProvider() {
+    public EmailProvider()
+    {
         Env.Load();
         _emailRemetente = Environment.GetEnvironmentVariable("email");
         _senhaRemete = Environment.GetEnvironmentVariable("senha");
+
+        // para testes que não utilizam variáveis de ambiente
+        if (_emailRemetente == null)
+        {
+            _emailRemetente = "desafio.diamante.nicholas@gmail.com";
+            _senhaRemete = "desafiodiamante123";
+        }
+
         
         _mail = new MailMessage();
 
@@ -20,10 +29,10 @@ public class EmailProvider
         
     }
 
-    public void EnviarEmail(string emailDestino, string assunto, string mensagem)
+    public void EnviarEmail(string emailDestino, string mensagem)
     {
         _mail.To.Add(emailDestino);
-        _mail.Subject = assunto;
+        _mail.Subject = "Conteúdo Exibido Desafio Diamantes";
         _mail.Body = mensagem;
 
         using (var smtp = new SmtpClient("smtp.gmail.com", 587))

@@ -83,7 +83,7 @@ public class DesafioDiamantes {
             if (regex.IsMatch(email!))
             {
                 var instace = new EmailProvider();
-                instace.EnviarEmail(email!, "Conteúdo Exibido Desafio Diamantes", Forma);
+                instace.EnviarEmail(email!, Forma);
             }
             else
             {
@@ -97,7 +97,7 @@ public class DesafioDiamantes {
     public void ExibirTriangulo()
     {
         Console.WriteLine("Digite a letra que será a base do Triangulo");
-        var isALetter = char.TryParse(Console.ReadLine(), out char letra);
+        var isALetter = char.TryParse(Console.ReadLine()!.ToUpper(), out char letra);
 
         if (!isALetter)
         {
@@ -145,7 +145,7 @@ public class DesafioDiamantes {
     public void ExibirDiamante()
     {
         Console.WriteLine("Digite a Letra que será o centro do Diamante (pontos mais distante)");
-        var isALetter = char.TryParse(Console.ReadLine(), out char letra);
+        var isALetter = char.TryParse(Console.ReadLine()!.ToUpper(), out char letra);
 
         if (!isALetter)
         {
