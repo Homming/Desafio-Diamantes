@@ -42,7 +42,7 @@ public class Diamantes {
                 EnviarConteudo();
                 break;
             case 3:
-                //ExportarPdf();
+                ExportarPdf();
                 break;
             case 0:
                 Console.WriteLine("Até Mais :)");
@@ -50,6 +50,16 @@ public class Diamantes {
             default:
                Console.WriteLine("Opção inválida, escolha um dos números do Menu");
                break;
+        }
+    }
+
+    public void ExportarPdf() {
+        if (conteudo == "")
+            Console.WriteLine("Ainda não foi gerado uma forma. Utilize primeiro uma das opções de exibição");
+        else {
+            var instace = new ExportPdf();
+
+            instace.ExportarParaPdf(conteudo);
         }
     }
 
