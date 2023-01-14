@@ -1,7 +1,5 @@
-using System.Linq;
 using System.Text.RegularExpressions;
-
-public class Diamantes {
+public class DesafioDiamantes {
 
     private readonly List<char> letras = new() {
         'A', 'B', 'C', 'D', 'E', 
@@ -12,12 +10,14 @@ public class Diamantes {
         'Z' 
     };
 
-    public string conteudo { get; set; } = "";
+    public string Forma { get; set; } = "";
 
-    public void Menu () {
+    public void Menu ()
+    {
         Console.WriteLine("Bem Vindo ao Desafio Diamantes");
         int opção;
-        do {
+        do
+        {
             Console.WriteLine("Escolha um das opções");
             Console.WriteLine("1 - Exibir um Diamante");
             Console.WriteLine("2 - Exibir um Triangulo");
@@ -29,15 +29,17 @@ public class Diamantes {
         } while (opção != 0);
     }
 
-    public void Opcao(int op) {
-        switch (op) {
+    public void Opcao(int op)
+    {
+        switch (op)
+        {
             case 1:
-                conteudo = "";
+                Forma = "";
                 ExibirDiamante();
                 EnviarConteudo();
                 break;
             case 2:
-                conteudo = "";
+                Forma = "";
                 ExibirTriangulo();
                 EnviarConteudo();
                 break;
@@ -53,31 +55,38 @@ public class Diamantes {
         }
     }
 
-    public void ExportarPdf() {
-        if (conteudo == "")
+    public void ExportarPdf()
+    {
+        if (Forma == "")
             Console.WriteLine("Ainda não foi gerado uma forma. Utilize primeiro uma das opções de exibição");
-        else {
+        else
+        {
             var instace = new ExportPdf();
 
-            instace.ExportarParaPdf(conteudo);
+            instace.ExportarParaPdf(Forma);
         }
     }
 
-    public void EnviarConteudo() {
+    public void EnviarConteudo()
+    {
        Console.WriteLine("Deseja enviar o conteúdo exibido por email ? (sim ou não)");
        string? resposta = Console.ReadLine();
 
-       if (resposta!.ToLower().Contains("sim")) {
+       if (resposta!.ToLower().Contains("sim"))
+       {
 
             Console.WriteLine("Digite o email para qual será enviado o conteúdo exibido");
             string? email = Console.ReadLine();
 
             var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"); 
 
-            if (regex.IsMatch(email!)) {
+            if (regex.IsMatch(email!))
+            {
                 var instace = new EmailProvider();
-                instace.EnviarEmail(email!, "Conteúdo Exibido Desafio Diamantes", conteudo);
-            } else {
+                instace.EnviarEmail(email!, "Conteúdo Exibido Desafio Diamantes", Forma);
+            }
+            else
+            {
                Console.WriteLine("Email inválido");
             }
             
@@ -85,86 +94,101 @@ public class Diamantes {
 
     }
 
-    public void ExibirTriangulo() {
+    public void ExibirTriangulo()
+    {
         Console.WriteLine("Digite a letra que será a base do Triangulo");
         var isALetter = char.TryParse(Console.ReadLine(), out char letra);
 
-        if (!isALetter) {
+        if (!isALetter)
+        {
             Console.WriteLine("Letra inválida, voltando ao menu");
-        } else {
+        }
+        else
+        {
             var letraIndex = letras.IndexOf(letra);
-            ImprimirTriangulo(letraIndex, letra, 0);
-            Console.Write(conteudo);
+            GerarTriangulo(letraIndex, letra, 0);
+            Console.WriteLine(Forma);
         }
     }
 
-    public void ImprimirTriangulo(int letraIndex, char letra, int AtualIndex) {
-        conteudo += "\n";
+    public void GerarTriangulo(int letraIndex, char letra, int AtualIndex)
+    {
         for (int i = 0; i <= letraIndex; i += 1)
-            conteudo += " ";
+            Forma += " ";
         
-        if (letra == 'A') {
-            conteudo += letra + "\n";
+        if (letra == 'A')
+        {
+            Forma += letra;
         }
-        else if (letras[AtualIndex] == 'A') {
-            conteudo += letras[AtualIndex];
-            ImprimirTriangulo(letraIndex - 1, letra, AtualIndex + 1);
+        else if (letras[AtualIndex] == 'A')
+        {
+            Forma += letras[AtualIndex] + "\n";;
+            GerarTriangulo(letraIndex - 1, letra, AtualIndex + 1);
         }
-        else if (letras[AtualIndex] == letra) {
+        else if (letras[AtualIndex] == letra)
+        {
             for (int i = AtualIndex; i > 0; i -= 1)
-                conteudo += letras[i];
+                Forma += letras[i];
             for (int i = 0; i <= AtualIndex; i += 1)
-                conteudo += letras[i];
-            conteudo += "\n";
+                Forma += letras[i];
         }
-        else {
-            conteudo += letras[AtualIndex];
+        else
+        {
+            Forma += letras[AtualIndex];
             for (int i = 1; i < AtualIndex * 2; i += 1)
-                conteudo += " ";
-            conteudo += letras[AtualIndex];
-            ImprimirTriangulo(letraIndex - 1, letra, AtualIndex + 1);
+                Forma += " ";
+            Forma += letras[AtualIndex] + "\n";;
+            GerarTriangulo(letraIndex - 1, letra, AtualIndex + 1);
         }
     }
 
-    public void ExibirDiamante() {
+    public void ExibirDiamante()
+    {
         Console.WriteLine("Digite a Letra que será o centro do Diamante (pontos mais distante)");
         var isALetter = char.TryParse(Console.ReadLine(), out char letra);
 
-        if (!isALetter) {
+        if (!isALetter)
+        {
             Console.WriteLine("Letra inválida, voltando ao menu");
-        } else {
+        }
+        else
+        {
             var letraIndex = letras.IndexOf(letra);
-            imprimirDiamante(letraIndex, letra, 0);
-            Console.Write(conteudo);
+            GerarDiamante(letraIndex, letra, 0);
+            Console.WriteLine(Forma);
         }
 
     }
 
-    public void imprimirDiamante(int letraIndex, char letra, int AtualIndex) {
-        conteudo += "\n";
+    public void GerarDiamante(int letraIndex, char letra, int AtualIndex)
+    {
         for (int i = 0; i <= letraIndex; i += 1)
-            conteudo += " ";
+            Forma += " ";
         
-        if (letra == 'A') {
-            conteudo += letra + "\n";
+        if (letra == 'A')
+        {
+            Forma += letra;
         }
-        else if (letras[AtualIndex] == 'A') {
-            conteudo += letras[AtualIndex];
-            imprimirDiamante(letraIndex - 1, letra, AtualIndex + 1);
+        else if (letras[AtualIndex] == 'A')
+        {
+            Forma += letras[AtualIndex] + "\n\n";;
+            GerarDiamante(letraIndex - 1, letra, AtualIndex + 1);
         }
-        else if (letras[AtualIndex] == letra) {
-            conteudo += letras[AtualIndex];
+        else if (letras[AtualIndex] == letra)
+        {
+            Forma += letras[AtualIndex];
             for (int i = 1; i < AtualIndex * 2; i += 1)
-               conteudo += " ";
-            conteudo += letras[AtualIndex];
-            imprimirDiamante(letraIndex + 1, letras[AtualIndex - 1], AtualIndex - 1);
+               Forma += " ";
+            Forma += letras[AtualIndex] + "\n\n";
+            GerarDiamante(letraIndex + 1, letras[AtualIndex - 1], AtualIndex - 1);
         }
-        else {
-            conteudo += letras[AtualIndex];
+        else
+        {
+            Forma += letras[AtualIndex];
             for (int i = 1; i < AtualIndex * 2; i += 1)
-                conteudo += " ";
-            conteudo += letras[AtualIndex];
-            imprimirDiamante(letraIndex - 1, letra, AtualIndex + 1);
+                Forma += " ";
+            Forma += letras[AtualIndex] + "\n\n";;
+            GerarDiamante(letraIndex - 1, letra, AtualIndex + 1);
         }
     }
 }

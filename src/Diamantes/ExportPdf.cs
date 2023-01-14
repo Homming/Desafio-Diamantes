@@ -29,6 +29,7 @@ public class ExportPdf {
             text.Add(dados);
 
             _doc.Add(text);
+
         } catch (Exception e) {
             Console.WriteLine(e.Message);
         } finally {

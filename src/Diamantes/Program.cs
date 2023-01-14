@@ -2,7 +2,7 @@
 
 public class Program {
     public static void Main(string[] args) {
-        var instace = new Diamantes();
+        var instace = new DesafioDiamantes();
 
         instace.Menu();
     }
