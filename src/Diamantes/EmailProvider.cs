@@ -16,7 +16,7 @@ public class EmailProvider
         
         _mail = new MailMessage();
 
-        _mail.From = new MailAddress(_emailRemetente);
+        _mail.From = new MailAddress(_emailRemetente!);
         
     }
 

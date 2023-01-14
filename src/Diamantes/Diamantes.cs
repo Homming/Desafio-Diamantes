@@ -74,9 +74,9 @@ public class Diamantes {
 
             var regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"); 
 
-            if (regex.IsMatch(email)) {
+            if (regex.IsMatch(email!)) {
                 var instace = new EmailProvider();
-                instace.EnviarEmail(email, "Conteúdo Exibido Desafio Diamantes", conteudo);
+                instace.EnviarEmail(email!, "Conteúdo Exibido Desafio Diamantes", conteudo);
             } else {
                Console.WriteLine("Email inválido");
             }
